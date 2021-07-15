@@ -29,7 +29,7 @@ class caesarCipher:
     return ''.join([str(el) for el in res])
 """
   Decode input data by Caesar Cipher.
-  `@name` decode
+  `@name` decode 
   `@param` {`string`} text - raw data for decode.
   `@param` {`number`} key - (`default 1`) count of shift.
   `@return` {`string`} The decoded by Caesar Cipher data
