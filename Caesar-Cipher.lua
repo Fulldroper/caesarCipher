@@ -1,4 +1,4 @@
--- @file Class realize Caesar encryption metods.
+-- @file Class realize Caesar encryption metods. 
 -- @class caesarCipher
 -- @author Full_droper <full_droper@pm.me>
 -- @version 0.0.1
