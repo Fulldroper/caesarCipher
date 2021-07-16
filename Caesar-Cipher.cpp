@@ -32,7 +32,7 @@ class CaesarCipher {
         * @name encode
         * @param {string} rawData - raw data for encode.
         * @param {number} key - (default 1) count of shift.
-        * @return {string} The encoded by Caesar Cipher data 
+        * @return {string} The decoded by Caesar Cipher data 
         */
         string decode(string rawData,int key){
             char data[rawData.length() + 1];
