@@ -26,11 +26,14 @@ func encode(str string, key int) (string) {
 	if key < 1 {
 		key = 1
 	}
+
 	var str_tmp string = ""
+
 	for pos, char := range str {
 		_ = pos
 		str_tmp += string(int(char) + key)
 	}
+
 	return str_tmp
 }
 /**
@@ -44,10 +47,13 @@ func decode(str string, key int) (string) {
 	if key < 1 {
 		key = 1
 	}
+
 	var str_tmp string = ""
+
 	for pos, char := range str {
 		_ = pos
 		str_tmp += string(int(char) - key)
 	}
+
 	return str_tmp
 }
