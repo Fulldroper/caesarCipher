@@ -14,15 +14,24 @@ export class caesarCipher{
     #inputProcessing(rawData){
         if (rawData&&rawData.length>0) {
             switch (typeof(rawData)) {
-                case 'string': return rawData.split('');break;
-                case 'object': return rawData;break;
-                case 'number': return `${rawData}`.split('');break;
-                default: return undefined;break;
+                case 'string': 
+                    return rawData.split('');
+                    break;
+                case 'object': 
+                    return rawData;
+                    break;
+                case 'number': 
+                    return `${rawData}`.split('');
+                    break;
+                default: 
+                    return undefined;
+                    break;
             }
         } else {
             return undefined;
         }
     }
+
     /**
      * Convert input key to number.
      * @name keyProcessing
@@ -31,12 +40,21 @@ export class caesarCipher{
      */
     #keyProcessing(key){
         switch (typeof(key)) {
-            case 'string': return +key;break;
-            case 'object': return key.value || key[0] ;break;
-            case 'number': return key;break;
-            default: return undefined;break;
+            case 'string': 
+                return +key; 
+                break;
+            case 'object': 
+                return key.value || key[0];
+                break;
+            case 'number': 
+                return key;
+                break;
+            default: 
+                return undefined;
+                break;
         }
     }
+
     /**
      * Encode input data by Caesar Cipher.
      * @name encode
@@ -46,17 +64,21 @@ export class caesarCipher{
      */
     encode(rawData,key = 1){
         const data = this["__#10172@#inputProcessing"](rawData);
-        key = key > 1?this["__#25137@#keyProcessing"](key):key;
+        key = key > 1 ? this["__#25137@#keyProcessing"](key) : key;
+
         if (data === undefined) {
             return undefined;
         } else {
             const res = new Array();
+
             data.forEach(el => {
                 res.push(String.fromCharCode(el.charCodeAt()+key))
             });
+
             return res.join('');
         }
     }
+
     /**
      * Decode input data by Caesar Cipher.
      * @name decode
@@ -67,13 +89,16 @@ export class caesarCipher{
     decode(rawData,key = 1){
         const data = this["__#10172@#inputProcessing"](rawData);
         key = key > 1?this["__#25137@#keyProcessing"](key):key;
+
         if (data === undefined) {
             return undefined;
         } else {
             const res = new Array();
+
             data.forEach(el => {
                 res.push(String.fromCharCode(el.charCodeAt()-key))
             });
+
             return res.join('');
         }
     }
